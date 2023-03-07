@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "569104745144",
+    "project_id": "hyst-f90db",
+    "storage_bucket": "hyst-f90db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569104745144:android:97ede15997bfd1da036a4d",
+        "android_client_info": {
+          "package_name": "com.example.hyst"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "569104745144-ooatrv0887j2bgp52gf7tcidq3hc0dcv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCL9jg4ewWP9pv983_xRBJw3bNTLHArQdc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "569104745144-ooatrv0887j2bgp52gf7tcidq3hc0dcv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
