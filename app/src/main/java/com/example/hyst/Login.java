@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Login extends AppCompatActivity {
 
     DatabaseReference myDB = FirebaseDatabase.getInstance().getReferenceFromUrl("https://hyst-f90db-default-rtdb.firebaseio.com/");
-
+TextView aSignup;
     Button btnConfirm;
     EditText etEmail, etPassword;
     @Override
@@ -30,7 +31,14 @@ public class Login extends AppCompatActivity {
         btnConfirm = findViewById(R.id.btnConfirm);
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
+        aSignup = findViewById(R.id.aSignUp);
 
+        aSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ASignUp();
+            }
+        });
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +82,11 @@ public class Login extends AppCompatActivity {
     }
     public void Login() {
         Intent intent = new Intent(this, dashboard.class);
+        startActivity(intent);
+        finish();
+    }
+    public void ASignUp(){
+        Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
         finish();
     }
