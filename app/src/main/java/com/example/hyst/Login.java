@@ -58,6 +58,8 @@ public class Login extends AppCompatActivity {
                                 if(getEmail.equals(getDBEmail) && getPass.equals(getDBPass)) {
 
                                 }
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Please fill up the field.", Toast.LENGTH_LONG).show();
                             }
                         }
 
