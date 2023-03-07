@@ -20,6 +20,7 @@ public class SignUp extends AppCompatActivity {
     DatabaseReference myDB = FirebaseDatabase.getInstance().getReferenceFromUrl("https://hyst-f90db-default-rtdb.firebaseio.com/");
     Button btnConfirm;
     EditText etEmail, etPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,15 +37,16 @@ public class SignUp extends AppCompatActivity {
                 String getPass = etPassword.getText().toString();
 
                 String email = etEmail.getText().toString();
-                String username = email.replaceAll("@.*","").replaceAll("[^a-zA-Z]+", " ").trim();
+                String username = email.replaceAll("@.*", "").replaceAll("[^a-zA-Z]+", " ").trim();
 
-                if(getEmail.equals("") && getPass.equals("")) {
-                    if(getEmail.equals("")) {
-                        Toast.makeText(getApplicationContext(), "Please fill up Email.", Toast.LENGTH_LONG).show();
-                    } else if(getPass.equals("")) {
+                if (getEmail.equals("") || getPass.equals("")) {
+                    if (getEmail.equals("") && getPass.equals("")) {
+                        Toast.makeText(getApplicationContext(), "Please fill up the field.", Toast.LENGTH_LONG).show();
+                    } else if (getPass.equals("")) {
                         Toast.makeText(getApplicationContext(), "Please fill up Password.", Toast.LENGTH_LONG).show();
+                    } else if (getEmail.equals("")) {
+                        Toast.makeText(getApplicationContext(), "Please fill up Email.", Toast.LENGTH_LONG).show();
                     }
-                    Toast.makeText(getApplicationContext(), "Please fill up the field.", Toast.LENGTH_LONG).show();
                 } else {
                     myDB.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
