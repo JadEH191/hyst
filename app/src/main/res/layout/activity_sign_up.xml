@@ -10,9 +10,11 @@
         android:id="@+id/imageView"
         android:layout_width="999dp"
         android:layout_height="2567dp"
-        app:srcCompat="@drawable/angryimg"
-        tools:layout_editor_absoluteX="-185dp"
-        tools:layout_editor_absoluteY="-958dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/angryimg" />
 
     <Button
         android:id="@+id/btnConfirm"
@@ -84,5 +86,16 @@
         app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/Systems_Technology_Institute" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
