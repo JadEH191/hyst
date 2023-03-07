@@ -1,5 +1,6 @@
 package com.example.hyst;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,8 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SignUp extends AppCompatActivity {
 
@@ -31,11 +35,32 @@ public class SignUp extends AppCompatActivity {
                 String getEmail = etEmail.getText().toString();
                 String getPass = etPassword.getText().toString();
 
-                String email = getEmail.toString();
+                String email = etEmail.getText().toString();
                 String username = email.replaceAll("@.*","").replaceAll("[^a-zA-Z]+", " ").trim();
 
                 if(getEmail.equals("") && getPass.equals("")) {
-                    Toast.makeText(getApplicationContext(), username + "registered successfully!", Toast.LENGTH_LONG).show();
+                    if(getEmail.equals("")) {
+                        Toast.makeText(getApplicationContext(), "Please fill up Email.", Toast.LENGTH_LONG).show();
+                    } else if(getPass.equals("")) {
+                        Toast.makeText(getApplicationContext(), "Please fill up Password.", Toast.LENGTH_LONG).show();
+                    }
+                    Toast.makeText(getApplicationContext(), "Please fill up the field.", Toast.LENGTH_LONG).show();
+                } else {
+                    myDB.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            myDB.child("users").child(username).child("username").setValue(username);
+                            myDB.child("users").child(username).child("email").setValue(getEmail);
+                            myDB.child("users").child(username).child("password").setValue(getPass);
+
+                            Toast.makeText(getApplicationContext(), username + " registered successfully", Toast.LENGTH_LONG).show();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                 }
             }
         });
