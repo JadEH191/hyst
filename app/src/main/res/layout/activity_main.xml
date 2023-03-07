@@ -7,10 +7,9 @@
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="244dp"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,6 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
         app:layout_constraintVertical_bias="0.024" />
+<<<<<<< HEAD
 
     <TextView
         android:id="@+id/tv_title"
@@ -48,4 +48,6 @@
         app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
         app:srcCompat="@drawable/gradient" />
 
+=======
+>>>>>>> origin/master
 </androidx.constraintlayout.widget.ConstraintLayout>
