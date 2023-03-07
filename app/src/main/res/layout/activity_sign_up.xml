@@ -6,16 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".SignUp">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="999dp"
+        android:layout_height="2567dp"
+        app:srcCompat="@drawable/angryimg"
+        tools:layout_editor_absoluteX="-185dp"
+        tools:layout_editor_absoluteY="-958dp" />
+
     <Button
         android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
         android:text="Confirm"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassword"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.15"
+        app:rippleColor="#FFFBFB" />
 
     <EditText
         android:id="@+id/etEmail"
@@ -23,6 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
         android:ems="10"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
 
         android:hint="angelo@mail.com"
         android:inputType="textEmailAddress"
@@ -38,6 +51,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="123456"
+        android:textColorHint="@color/white"
+
         android:inputType="textPassword"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,6 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:text="Password"
+        android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.197"
@@ -61,10 +77,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="204dp"
+        android:textColor="@color/white"
         android:text="Email"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
