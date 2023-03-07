@@ -10,7 +10,7 @@
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="580dp"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
@@ -34,54 +34,42 @@
         android:id="@+id/imageView3"
         android:layout_width="417dp"
         android:layout_height="251dp"
-        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/gradient" />
-
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
-        android:text="Calculator"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignUp" />
 
     <EditText
         android:id="@+id/input1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="159dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Input1"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        app:layout_constraintVertical_bias="0.257" />
+        app:layout_constraintVertical_bias="0.143" />
 
     <EditText
         android:id="@+id/input2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="56dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="input2"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        app:layout_constraintVertical_bias="0.599" />
+        app:layout_constraintVertical_bias="0.145" />
 
     <Button
         android:id="@+id/btn_add"
@@ -90,19 +78,34 @@
         android:text="add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input2" />
+        app:layout_constraintTop_toBottomOf="@+id/input2"
+        app:layout_constraintVertical_bias="0.021" />
 
     <TextView
         android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="508dp"
         android:text="result"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toEndOf="@+id/btn_add" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculator"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.035" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
