@@ -71,7 +71,7 @@ public class Login extends AppCompatActivity {
         });
     }
     public void Login() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, dashboard.class);
         startActivity(intent);
         finish();
     }
