@@ -50,13 +50,14 @@ TextView aSignup;
                 String email = etEmail.getText().toString();
                 String username = email.replaceAll("@.*","").replaceAll("[^a-zA-Z]+", " ").trim();
 
-                if(getEmail.equals("") && getPass.equals("")) {
-                    if(getEmail.equals("")) {
-                        Toast.makeText(getApplicationContext(), "Please fill up Email.", Toast.LENGTH_LONG).show();
-                    } else if(getPass.equals("")) {
+                if(getEmail.equals("") || getPass.equals("")) {
+                    if (getEmail.equals("") && getPass.equals("")) {
+                        Toast.makeText(getApplicationContext(), "Please fill up the field.", Toast.LENGTH_LONG).show();
+                    } else if (getPass.equals("")) {
                         Toast.makeText(getApplicationContext(), "Please fill up Password.", Toast.LENGTH_LONG).show();
+                    } else if (getEmail.equals("")) {
+                        Toast.makeText(getApplicationContext(), "Please fill up Email.", Toast.LENGTH_LONG).show();
                     }
-                    Toast.makeText(getApplicationContext(), "Please fill up the field.", Toast.LENGTH_LONG).show();
                 } else {
                     myDB.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -66,7 +67,7 @@ TextView aSignup;
                                 String getDBPass = snapshot.child(username).child("password").getValue(String.class);
 
                                 if(getEmail.equals(getDBEmail) && getPass.equals(getDBPass)) {
-
+                                    Login();
                                 }
                             } else {
                                 Toast.makeText(getApplicationContext(), "Please fill up the field.", Toast.LENGTH_LONG).show();
