@@ -31,7 +31,7 @@
         app:srcCompat="@drawable/bastaa" />
 
     <Button
-        android:id="@+id/btnConfirm"
+        android:id="@+id/btnTesting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"
@@ -133,6 +133,6 @@
         android:text="I have an Account! Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnConfirm" />
+        app:layout_constraintTop_toTopOf="@+id/btnTesting" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
