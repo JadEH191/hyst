@@ -36,6 +36,14 @@ public class SignUp extends AppCompatActivity {
         aLogin = findViewById(R.id.aLogin);
         aLogin.setPaintFlags(aLogin.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
+
+        aLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ALogin();
+            }
+        });
+
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
