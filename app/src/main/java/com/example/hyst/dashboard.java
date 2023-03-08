@@ -22,7 +22,6 @@ import com.google.firebase.database.ValueEventListener;
 public class dashboard extends AppCompatActivity {
 
     DatabaseReference myDB = FirebaseDatabase.getInstance().getReferenceFromUrl("https://hyst-f90db-default-rtdb.firebaseio.com/");
-    TextView tvUsername, tvEmail, tvPassword;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;

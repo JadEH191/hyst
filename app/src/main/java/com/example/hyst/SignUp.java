@@ -70,6 +70,7 @@ public class SignUp extends AppCompatActivity {
                             myDB.child("users").child(username).child("password").setValue(getPass);
 
                             Toast.makeText(getApplicationContext(), username + " registered successfully", Toast.LENGTH_LONG).show();
+                            MainActivity();
                         }
 
                         @Override
