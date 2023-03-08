@@ -22,9 +22,5 @@ public class dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        tvUsername = findViewById(R.id.tvUsername);
-        tvEmail = findViewById(R.id.tvEmail);
-        tvPassword = findViewById(R.id.tvPassword);
-
     }
 }
