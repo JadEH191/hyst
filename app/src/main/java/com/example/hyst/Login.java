@@ -20,9 +20,13 @@ import com.google.firebase.database.ValueEventListener;
 public class Login extends AppCompatActivity {
 
     DatabaseReference myDB = FirebaseDatabase.getInstance().getReferenceFromUrl("https://hyst-f90db-default-rtdb.firebaseio.com/");
-TextView aSignup;
+    TextView aSignup;
     Button btnConfirm;
     EditText etEmail, etPassword;
+
+    String name, emailtest, pass;
+    String user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +50,11 @@ TextView aSignup;
                 String getPass = etPassword.getText().toString();
 
                 String email = etEmail.getText().toString();
-                String username = email.replaceAll("@.*","").replaceAll("[^a-zA-Z]+", " ").trim();
+                String username = email.replaceAll("@.*", "").replaceAll("[^a-zA-Z]+", " ").trim();
 
-                if(getEmail.equals("") || getPass.equals("")) {
+                user = username;
+
+                if (getEmail.equals("") || getPass.equals("")) {
                     if (getEmail.equals("") && getPass.equals("")) {
                         Toast.makeText(getApplicationContext(), "Please fill up the field.", Toast.LENGTH_LONG).show();
                     } else if (getPass.equals("")) {
@@ -60,12 +66,21 @@ TextView aSignup;
                     myDB.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(username)) {
+                            dashboard dashboard = new dashboard();
+
+                            if (snapshot.hasChild(username)) {
+                                String getDBName = snapshot.child(username).child("username").getValue(String.class);
                                 String getDBEmail = snapshot.child(username).child("email").getValue(String.class);
                                 String getDBPass = snapshot.child(username).child("password").getValue(String.class);
 
-                                if(getEmail.equals(getDBEmail) && getPass.equals(getDBPass)) {
+                                name = getDBName;
+                                emailtest = getDBEmail;
+                                pass = getDBPass;
+
+                                if (getEmail.equals(getDBEmail) && getPass.equals(getDBPass)) {
                                     Login();
+
+                                    Toast.makeText(getApplicationContext(), getDBEmail + " " + getDBPass, Toast.LENGTH_LONG).show();
                                 }
                             } else {
                                 Toast.makeText(getApplicationContext(), "Please fill up the field.", Toast.LENGTH_LONG).show();
@@ -81,12 +96,14 @@ TextView aSignup;
             }
         });
     }
+
     public void Login() {
         Intent intent = new Intent(this, dashboard.class);
         startActivity(intent);
         finish();
     }
-    public void ASignUp(){
+
+    public void ASignUp() {
         Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
         finish();
